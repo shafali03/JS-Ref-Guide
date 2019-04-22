@@ -5,8 +5,9 @@
 
 // STUDENT
 
-function Person() {
-
+function Person(name, lastName) {
+    this.name = name;
+    this.lastName = lastName;
 
 }
 Person.prototype.school = "Crystal Grove High School";
@@ -17,10 +18,13 @@ Person.prototype.greet = function () {
     );
 };
 
+//Student
+function Student(name, lastName, honorStudent) {
 
-function Student(name, lastName) {
-    this.name = name;
-    this.lastName = lastName;
+    Person.call(this, name, lastName)
+    this.honorStudent = honorStudent;
+
+
 }
 
 Student.prototype = Object.create(Person.prototype);
@@ -31,15 +35,17 @@ Student.prototype.answerQuestion = function () {
 };
 
 Student.prototype.role = 'student';
-const john = new Student("john", "conner");
+const john = new Student("john", "conner", false);
 console.log(john);
 
 john.greet();
 john.answerQuestion();
+
+
 // Teacher
 function Teacher(name, lastName) {
-    this.name = name;
-    this.lastName = lastName;
+    Person.call(this, name, lastName);
+
 }
 Teacher.prototype = Object.create(Person.prototype);
 Teacher.prototype.constructor = Teacher;
