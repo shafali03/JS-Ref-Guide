@@ -25,14 +25,15 @@ function getData(url) {
     `;
             let display = "";
 
-            const specialItems = data.cartItems.filter(function () {
+            const specialItems = data.cartItems.filter(function (item) {
+                return item.price > 1;
 
             })
 
 
 
 
-            data.cartItems.forEach(function (item) {
+            specialItems.forEach(function (item) {
                 display += `
      <div class='item'>
     <p>item id: ${item.id}</p>
