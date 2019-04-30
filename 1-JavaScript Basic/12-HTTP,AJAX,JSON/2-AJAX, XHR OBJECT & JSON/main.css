@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+h3 {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 3rem;
+
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+    background: green;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.info {
+    text-align: center;
+
+}
+
+
+.item {
+    margin: 2rem;
+    border: 1px solid black;
+}
+
